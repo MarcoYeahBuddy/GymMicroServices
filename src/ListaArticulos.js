@@ -7,21 +7,21 @@ function ListaArticulos() {
   const articulos = [
     {
       id: 1,
-      imagen: 'https://via.placeholder.com/150',
+      imagen: "/prote.webp",
       titulo: 'Proteína Whey',
       descripcion: 'Proteína de alta calidad para aumentar masa muscular.',
       precio: 45.99,
     },
     {
       id: 2,
-      imagen: 'https://via.placeholder.com/150',
+      imagen: "/creatina.jpg",
       titulo: 'Creatina',
       descripcion: 'Suplemento para mejorar el rendimiento en entrenamientos.',
       precio: 19.99,
     },
     {
       id: 3,
-      imagen: 'https://via.placeholder.com/150',
+      imagen: "/BCAA.jpg",
       titulo: 'BCAA',
       descripcion: 'Aminoácidos esenciales para la recuperación muscular.',
       precio: 25.99,

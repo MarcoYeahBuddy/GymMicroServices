@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="src\components\logo.png" alt="SAYAGYM" />
+        <img src="/logo.png" alt="SAYAGYM" />
         <h1>SAYAGYM</h1>
       </div>
       <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
