@@ -1,0 +1,10 @@
+/* src/ListaArticulos.css */
+.lista-articulos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  

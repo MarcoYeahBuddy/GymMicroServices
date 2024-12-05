@@ -1,0 +1,27 @@
+/* src/components/Footer.css */
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 10px 0 0;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #007bff;
+  }
+  
