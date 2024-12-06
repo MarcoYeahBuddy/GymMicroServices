@@ -1,0 +1,251 @@
+/* src/pages/styles/Home.css */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(45deg, #900c3f, #ff5733 );
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.btn-primary {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    background-color: #ff4a4a;
+}
+
+/* Images in Hero Section */
+.hero-images {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.hero-image-left,
+.hero-image-right {
+    width: 20%; /* Imagen más grande */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-image-left:hover,
+.hero-image-right:hover {
+    transform: scale(1.2);
+}
+
+.hero-image-left {
+    position: absolute;
+    left: 0;  /* Imagen a la izquierda */
+    bottom: 10%; /* Ajustado para estar más abajo */
+}
+
+.hero-image-right {
+    position: absolute;
+    right: 0;  /* Imagen a la derecha */
+    bottom: 10%; /* Ajustado para estar más abajo */
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-image-left,
+    .hero-image-right {
+        width: 25%; /* Aumentamos el tamaño en pantallas medianas */
+    }
+
+    .hero-image-left {
+        left: 5%; /* Aumentamos el margen izquierdo */
+    }
+
+    .hero-image-right {
+        right: 5%; /* Aumentamos el margen derecho */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .hero-image-left,
+    .hero-image-right {
+        width: 30%; /* Aumentamos más el tamaño de las imágenes en pantallas pequeñas */
+    }
+}
+
+
+
+/*CATEGORÍA SECTION STYLE */
+/* src/pages/styles/Home.css */
+
+/* Estilos de la sección de categorías */
+/* src/pages/styles/Categoria.css */
+
+.categoria-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.categoria-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+    position: relative;
+}
+
+/* Cards dentro del carrusel */
+.categoria-card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imagen dentro de cada card */
+.categoria-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.categoria-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Texto sobre la imagen */
+.categoria-text {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Efecto hover sobre las imagenes */
+.categoria-card:hover .categoria-image {
+    transform: scale(1.1);
+}
+
+/* Indicadores de deslizamiento */
+.carousel-guide-left, .carousel-guide-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-guide-left {
+    left: 10px;
+}
+
+.carousel-guide-right {
+    right: 10px;
+}
+
+.carousel-guide-left:hover, .carousel-guide-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .categoria-section h2 {
+        font-size: 2rem;
+    }
+
+    .categoria-image-wrapper {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .categoria-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .categoria-image-wrapper {
+        height: 120px;
+    }
+}

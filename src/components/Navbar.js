@@ -1,5 +1,6 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Importa Link de React Router DOM
 import './Navbar.css';
 
 function Navbar() {
@@ -16,9 +17,11 @@ function Navbar() {
         <h1>SAYAGYM</h1>
       </div>
       <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        {/* Reemplaza <a> por <Link> y define las rutas */}
+        <li><Link to="/">Inicio</Link></li>
+        <li><Link to="/categorias">Categorías</Link></li>
+        <li><Link to="/proveedores">Proveedores</Link></li>
+        <li><Link to="/reportes">Reportes</Link></li>
       </ul>
       <div className="navbar-toggle" onClick={toggleMenu}>
         <span className="bar"></span>

@@ -44,7 +44,7 @@
   }
   
   .articulo-btn {
-    background-color: #007bff;
+    background-color: #ff6b6b;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -55,6 +55,6 @@
   }
   
   .articulo-btn:hover {
-    background-color: #0056b3;
+    background-color: #ff4a4a;
   }
   

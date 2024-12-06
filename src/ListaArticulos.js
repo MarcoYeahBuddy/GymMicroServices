@@ -26,6 +26,7 @@ function ListaArticulos() {
       descripcion: 'Aminoácidos esenciales para la recuperación muscular.',
       precio: 25.99,
     },
+
   ];
 
   return (
