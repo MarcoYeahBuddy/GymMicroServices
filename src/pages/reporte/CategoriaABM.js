@@ -1,9 +1,10 @@
 // src/pages/reporte/CategoriaABM.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./styles/Reportes.css"; // Asegúrate de tener los estilos adecuados
+import "./styles/CategoriaABM.css";
 
-function CategoriaABM() {
+const CategoriaABM = () => {
+  // Estados
   const [categorias, setCategorias] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [formType, setFormType] = useState(""); // 'add' o 'edit'
@@ -14,18 +15,12 @@ function CategoriaABM() {
     imagen: "",
   });
 
-  // Función para alternar el formulario
-  const toggleForm = (type, categoria = null) => {
-    setFormType(type);
-    setShowForm(!showForm);
-    if (type === "edit" && categoria) {
-      setCategoriaData(categoria); // Cargar los datos de la categoría en el formulario de edición
-    } else {
-      setCategoriaData({ id: "", nombre: "", descripcion: "", imagen: "" });
-    }
-  };
+  // Efecto para cargar categorías
+  useEffect(() => {
+    fetchCategorias();
+  }, []);
 
-  // Cargar las categorías desde la API
+  // Funciones para CRUD
   const fetchCategorias = async () => {
     try {
       const response = await axios.get("http://localhost:5001/categorias/");
@@ -35,22 +30,16 @@ function CategoriaABM() {
     }
   };
 
-  useEffect(() => {
-    fetchCategorias();
-  }, []);
-
-  // Función para agregar una nueva categoría
   const addCategoria = async () => {
     try {
       const response = await axios.post("http://localhost:5001/categorias/", categoriaData);
-      setCategorias([...categorias, response.data]); // Agregar la nueva categoría a la tabla
-      toggleForm(""); // Cerrar formulario
+      setCategorias([...categorias, response.data]);
+      toggleForm("");
     } catch (error) {
       console.error("Error al agregar categoría:", error);
     }
   };
 
-  // Función para actualizar una categoría
   const updateCategoria = async () => {
     try {
       await axios.put(`http://localhost:5001/categorias/${categoriaData.id}`, categoriaData);
@@ -59,13 +48,12 @@ function CategoriaABM() {
           cat.id === categoriaData.id ? { ...categoriaData } : cat
         )
       );
-      toggleForm(""); // Cerrar formulario
+      toggleForm("");
     } catch (error) {
       console.error("Error al actualizar categoría:", error);
     }
   };
 
-  // Función para eliminar una categoría
   const deleteCategoria = async (id) => {
     try {
       await axios.delete(`http://localhost:5001/categorias/${id}`);
@@ -75,7 +63,17 @@ function CategoriaABM() {
     }
   };
 
-  // Manejar los cambios en los campos del formulario
+  // Manejo del formulario
+  const toggleForm = (type, categoria = null) => {
+    setFormType(type);
+    setShowForm(!showForm);
+    if (type === "edit" && categoria) {
+      setCategoriaData(categoria);
+    } else {
+      setCategoriaData({ id: "", nombre: "", descripcion: "", imagen: "" });
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCategoriaData((prev) => ({
@@ -84,7 +82,6 @@ function CategoriaABM() {
     }));
   };
 
-  // Manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formType === "add") {
@@ -94,6 +91,7 @@ function CategoriaABM() {
     }
   };
 
+  // Renderización
   return (
     <div className="tabla">
       <h3>Categorías</h3>
@@ -116,7 +114,9 @@ function CategoriaABM() {
               <td>{categoria.id}</td>
               <td>{categoria.nombre}</td>
               <td>{categoria.descripcion}</td>
-              <td><img src={categoria.imagen} alt={categoria.nombre} width="50" /></td>
+              <td>
+                <img src={categoria.imagen} alt={categoria.nombre} width="50" />
+              </td>
               <td>
                 <button onClick={() => toggleForm("edit", categoria)}>Modificar</button>
                 <button onClick={() => deleteCategoria(categoria.id)}>Eliminar</button>
@@ -126,7 +126,7 @@ function CategoriaABM() {
         </tbody>
       </table>
 
-      {/* Modal para Añadir/Modificar Categoría */}
+      {/* Modal de formulario */}
       {showForm && (
         <div className="formulario-overlay">
           <div className="formulario-container">
@@ -174,6 +174,6 @@ function CategoriaABM() {
       )}
     </div>
   );
-}
+};
 
 export default CategoriaABM;

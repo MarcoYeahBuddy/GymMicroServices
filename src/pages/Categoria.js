@@ -37,6 +37,7 @@ const Categoria = () => {
     }
 
     return (
+
         <section className="categoria-section">
             <h2>Categorías de Productos</h2>
             <div className="carousel-wrapper">

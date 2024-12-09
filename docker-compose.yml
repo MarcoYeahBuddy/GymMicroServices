@@ -21,3 +21,27 @@ services:
       - DB_NAME=gym
     depends_on:
       - db
+  proveedor:
+    build:
+      context: ./services/proveedor
+    ports:
+      - '5002:3000'
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=gym
+    depends_on:
+      - db
+  producto:
+    build:
+      context: ./services/producto
+    ports:
+      - '5003:3000'
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=gym
+    depends_on:
+      - db

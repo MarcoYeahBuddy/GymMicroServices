@@ -1,91 +1,176 @@
-/* Estilos para la tabla y botones */
-.tabla {
-    padding: 20px;
-  }
-  
-  button {
-    padding: 10px;
-    margin: 5px;
-  }
-  
-  .btn-add {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  /* Estilos del formulario modal */
-  .formulario-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  text-align: center;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+/* Botones */
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Botón Añadir */
+.btn-add {
+  background-color: #4caf50;
+  color: #ffffff;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.btn-add:hover {
+  background-color: #45a049;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+table th, table td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #444444;
+}
+
+table th {
+  background-color: #333333;
+}
+
+table tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+table tr:hover {
+  background-color: #3a3a3a;
+}
+
+img {
+  border-radius: 5px;
+}
+
+/* Formulario Modal */
+.formulario-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.formulario-container {
+  background-color: #282828;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  color: #ffffff;
+}
+
+.formulario-container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+}
+
+.formulario-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formulario-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #444444;
+  border-radius: 5px;
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+.formulario-container button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+.formulario-container button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.formulario-container button[type="button"] {
+  background-color: #f44336;
+  color: white;
+  margin-left: 10px;
+}
+
+.formulario-container button[type="button"]:hover {
+  background-color: #e53935;
+}
+
+/* Responsivo */
+@media screen and (max-width: 600px) {
   .formulario-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 500px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
   }
-  
-  .formulario-container h3 {
-    margin-bottom: 20px;
-  }
-  
-  .formulario-container form div {
-    margin-bottom: 10px;
-  }
-  
-  .formulario-container label {
-    display: block;
-    font-weight: bold;
-  }
-  
-  .formulario-container input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-  }
-  
-  .formulario-container button {
-    padding: 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .formulario-container button[type="button"] {
-    background-color: #f44336;
-  }
-  
-  .formulario-container button:hover {
-    background-color: #45a049;
-  }
-  
-  .formulario-container button[type="button"]:hover {
-    background-color: #d32f2f;
-  }
-  
+}
+.categoria-abm-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.categoria-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.categoria-form input,
+.categoria-form textarea,
+.categoria-form button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.categorias-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.categorias-table th,
+.categorias-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.categorias-table img {
+  border-radius: 4px;
+}

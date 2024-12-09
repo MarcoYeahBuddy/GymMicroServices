@@ -1,26 +1,37 @@
-// src/pages/Proveedores.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './styles/Proveedores.css'; // Asegúrate de crear este archivo de estilo
 
-const proveedores = [
-  { id: 1, name: 'DRAGON PHARMA', img: '/dragon.jpg' },
-  { id: 2, name: 'MONSTER', img: '/monter.jpg' },
-  { id: 3, name: 'RONNIE COLEMMAN', img: '/RC.png' },
-  { id: 4, name: 'RYSE', img: '/ryse.jpg' },
-  { id: 5, name: 'NIKE', img: '/nike.jpg' },
-];
-
 const Proveedores = () => {
+  const [proveedores, setProveedores] = useState([]);
+
+  // Función para obtener los datos de proveedores desde la API
+  const fetchProveedores = async () => {
+    try {
+      const response = await axios.get('http://localhost:5002/proveedores');
+      setProveedores(response.data);
+    } catch (error) {
+      console.error('Error al obtener los proveedores:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProveedores();
+  }, []); // Se ejecuta una vez al cargar el componente
+
   return (
     <div className="proveedores-container">
-      
       <div className="proveedores-carousel">
         {proveedores.map((proveedor) => (
           <div key={proveedor.id} className="hexagon-container">
             <div className="hexagon">
-              <img src={proveedor.img} alt={proveedor.name} className="hexagon-img" />
+              <img
+                src={proveedor.imagen} // La imagen debe ser la URL del campo `imagen` en la base de datos
+                alt={proveedor.nombre}
+                className="hexagon-img"
+              />
             </div>
-            <p>{proveedor.name}</p>
+            <p>{proveedor.nombre}</p>
           </div>
         ))}
       </div>

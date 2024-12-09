@@ -1,0 +1,36 @@
+.proveedor-abm-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .proveedor-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .proveedor-form input,
+  .proveedor-form textarea,
+  .proveedor-form button {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .proveedores-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .proveedores-table th,
+  .proveedores-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .proveedores-table img {
+    border-radius: 4px;
+  }
+  
