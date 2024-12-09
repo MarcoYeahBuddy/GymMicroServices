@@ -62,8 +62,7 @@
 .hero-images {
     position: absolute;
     width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 90%;
     z-index: 2;
     display: flex;
     justify-content: space-between;
@@ -74,21 +73,26 @@
 .hero-image-right {
     width: 20%; /* Imagen más grande */
     transition: transform 0.3s ease;
+    transform: translateY(-10%);
     cursor: pointer;
 }
+
 
 .hero-image-left:hover,
 .hero-image-right:hover {
     transform: scale(1.2);
 }
 
+
 .hero-image-left {
     position: absolute;
+    transform: translateX(10%);
     left: 0;  /* Imagen a la izquierda */
     bottom: 10%; /* Ajustado para estar más abajo */
 }
 
 .hero-image-right {
+    transform: translateX(-10%);
     position: absolute;
     right: 0;  /* Imagen a la derecha */
     bottom: 10%; /* Ajustado para estar más abajo */
