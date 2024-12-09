@@ -12,7 +12,7 @@ INSERT INTO Proveedor (nombre, contacto, telefono, email, direccion, imagen) VAL
 
 -- Inserciones para la tabla Producto
 INSERT INTO Producto (nombre, descripcion, costo, precio, stock, imagen, categoria_id, proveedor_id) VALUES
-('Proteína Whey', 'Proteina en polvo para el crecimiento muscular, sabor chocolate.', 25.50, 40.00, 100, '/prote.webp', 1, 1),
-('BCAA 2:1:1', 'Aminoacidos esenciales para recuperacion muscular.', 15.00, 25.00, 200, 'BCAA.jpg', 2, 2),
+('Proteina Whey', 'Proteina en polvo para el crecimiento muscular, sabor chocolate.', 25.50, 40.00, 100, '/prote.webp', 3, 1),
+('BCAA 2:1:1', 'Aminoacidos esenciales para recuperacion muscular.', 15.00, 25.00, 200, 'BCAA.jpg', 3, 2),
 ('Creatina Monohidratada', 'Suplemento para aumentar la fuerza y el rendimiento.', 10.00, 15.00, 150, '/creatina.jpg', 3, 3),
-('Omega-3', 'Aceite de pescado para soporte cardiovascular.', 8.00, 12.00, 80, 'imagenes/productos/omega3.jpg', 3, 2);
+('Omega-3', 'Aceite de pescado para soporte cardiovascular.', 8.00, 12.00, 80, '/omega3.jpg', 3, 2);

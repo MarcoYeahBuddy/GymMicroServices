@@ -1,60 +1,108 @@
-/* src/Articulo.css */
-.articulo-card {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    max-width: 300px;
+/* Contenedor principal */
+.articulo {
+  display: flex;
+  flex-direction: column; /* Cambia a fila en pantallas más grandes */
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto al pasar el mouse */
+.articulo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del producto */
+.articulo-imagen {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Detalles del producto */
+.articulo-detalles {
+  text-align: center;
+}
+
+/* Título del producto */
+.articulo-detalles h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Descripción */
+.articulo-detalles p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* Texto destacado */
+.articulo-detalles strong {
+  font-weight: bold;
+  color: #000;
+}
+
+/* Precio */
+.articulo-detalles p:nth-child(3) {
+  font-size: 1.25rem;
+  color: #27ae60;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Responsividad */
+@media (min-width: 768px) {
+  .articulo {
+    flex-direction: row; /* Cambia a disposición en fila */
+    align-items: flex-start;
   }
-  
-  .articulo-card:hover {
-    transform: translateY(-5px);
+
+  .articulo-imagen {
+    flex: 1;
+    max-width: 200px;
+    margin-right: 20px;
   }
-  
-  .articulo-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .articulo-content {
-    padding: 15px;
+
+  .articulo-detalles {
+    flex: 2;
     text-align: left;
   }
-  
-  .articulo-title {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 10px;
+
+  .articulo-detalles h3 {
+    font-size: 1.75rem;
   }
-  
-  .articulo-description {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 15px;
+
+  .articulo-detalles p {
+    font-size: 1.1rem;
   }
-  
-  .articulo-price {
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #28a745;
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 480px) {
+  .articulo {
+    padding: 10px;
   }
-  
-  .articulo-btn {
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 0.9em;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+
+  .articulo-detalles h3 {
+    font-size: 1.25rem;
   }
-  
-  .articulo-btn:hover {
-    background-color: #ff4a4a;
+
+  .articulo-detalles p {
+    font-size: 0.9rem;
   }
-  
+
+  .articulo-imagen {
+    max-height: 150px;
+  }
+}

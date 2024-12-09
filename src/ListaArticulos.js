@@ -1,45 +1,51 @@
-// src/ListaArticulos.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Articulo from './Articulo';
 import './ListaArticulos.css';
+import axios from 'axios';
 
 function ListaArticulos() {
-  const articulos = [
-    {
-      id: 1,
-      imagen: "/prote.webp",
-      titulo: 'Proteína Whey',
-      descripcion: 'Proteína de alta calidad para aumentar masa muscular.',
-      precio: 45.99,
-    },
-    {
-      id: 2,
-      imagen: "/creatina.jpg",
-      titulo: 'Creatina',
-      descripcion: 'Suplemento para mejorar el rendimiento en entrenamientos.',
-      precio: 19.99,
-    },
-    {
-      id: 3,
-      imagen: "/BCAA.jpg",
-      titulo: 'BCAA',
-      descripcion: 'Aminoácidos esenciales para la recuperación muscular.',
-      precio: 25.99,
-    },
+  const [articulos, setArticulos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  ];
+  // Función para obtener los productos desde la API
+  const fetchArticulos = async () => {
+    try {
+      const response = await axios.get('http://localhost:5003/productos');
+      setArticulos(response.data);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error al obtener los artículos:', error);
+      setLoading(false);
+    }
+  };
+
+  // Cargar los artículos al montar el componente
+  useEffect(() => {
+    fetchArticulos();
+  }, []);
 
   return (
     <div className="lista-articulos">
-      {articulos.map((articulo) => (
-        <Articulo
-          key={articulo.id}
-          imagen={articulo.imagen}
-          titulo={articulo.titulo}
-          descripcion={articulo.descripcion}
-          precio={articulo.precio}
-        />
-      ))}
+      <h2>Lista de Artículos</h2>
+      {loading ? (
+        <p>Cargando artículos...</p>
+      ) : articulos.length > 0 ? (
+        articulos.map((articulo) => (
+          <Articulo
+            key={articulo.id}
+            imagen={articulo.imagen || '/placeholder.jpg'}
+            titulo={articulo.nombre}
+            descripcion={articulo.descripcion}
+            precio={parseFloat(articulo.precio)} // Convertir a número
+            stock={articulo.stock}
+            categoria={articulo.categoria}
+            proveedor={articulo.proveedor}
+          />
+        ))
+        
+      ) : (
+        <p>No se encontraron artículos.</p>
+      )}
     </div>
   );
 }
