@@ -4,7 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/services/categoria/node_modules
+/services/producto/node_modules
+/services/proveedor/node_modules
+/backend
 # testing
 /coverage
 

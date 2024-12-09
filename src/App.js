@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 /*import Productos from "./pages/Productos";*/
 import Categorias from "./pages/Categoria";
 import Proveedores from "./pages/Proveedores";
-import Reportes from "./pages/Reportes";
+import Reportes from "./pages/reporte/Reportes";
 
 const App = () => {
   return (

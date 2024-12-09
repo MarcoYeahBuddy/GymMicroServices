@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gym
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./db/init-scripts:/docker-entrypoint-initdb.d
+  categoria:
+    build:
+      context: ./services/categoria
+    ports:
+      - '5001:3000'
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=gym
+    depends_on:
+      - db

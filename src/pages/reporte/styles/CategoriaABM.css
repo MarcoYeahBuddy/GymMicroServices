@@ -1,0 +1,91 @@
+/* Estilos para la tabla y botones */
+.tabla {
+    padding: 20px;
+  }
+  
+  button {
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .btn-add {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  /* Estilos del formulario modal */
+  .formulario-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .formulario-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formulario-container h3 {
+    margin-bottom: 20px;
+  }
+  
+  .formulario-container form div {
+    margin-bottom: 10px;
+  }
+  
+  .formulario-container label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .formulario-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .formulario-container button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .formulario-container button[type="button"] {
+    background-color: #f44336;
+  }
+  
+  .formulario-container button:hover {
+    background-color: #45a049;
+  }
+  
+  .formulario-container button[type="button"]:hover {
+    background-color: #d32f2f;
+  }
+  
