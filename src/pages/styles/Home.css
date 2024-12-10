@@ -3,7 +3,7 @@
 /* Hero Section */
 .hero {
     position: relative;
-    height: 60vh;
+    height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,7 +92,7 @@
 }
 
 .hero-image-right {
-    transform: translateX(-10%);
+    transform: translateX(-100%);
     position: absolute;
     right: 0;  /* Imagen a la derecha */
     bottom: 10%; /* Ajustado para estar más abajo */
@@ -155,7 +155,7 @@
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #333;
+    color: #ffffff;
 }
 
 /* Carousel Wrapper */
@@ -253,3 +253,125 @@
         height: 120px;
     }
 }
+/* Estilo base del header */
+.hero {
+    position: relative;
+    height: 70vh;
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+  
+  .hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  /* Contenido */
+  .hero-content {
+    z-index: 2;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Russo One', sans-serif;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Botón */
+  .btn-primary {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff9900;
+    transform: scale(1.05);
+  }
+  
+  /* Hero images */
+  .hero-images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+  }
+  
+  .hero-image-left,
+  .hero-image-right {
+    max-width: 40%;
+    z-index: 2;
+  }
+  
+  /* Animación para "SAYAGYM" */
+  .sayagym {
+    font-family: 'Russo One', sans-serif;
+    font-size: 5rem;
+    background: linear-gradient(90deg, #feda2a, #ff5733, #b93f0c);
+    color: currentColor;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: kiCharge 2s infinite;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Efecto de carga Ki */
+  @keyframes kiCharge {
+    0% {
+      transform: scale(1);
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 1);
+    }
+    20% {
+      transform: scale(1.1);
+      text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.9), 0 0 55px rgba(255, 255, 255, 0.9);
+    }
+    40% {
+      transform: scale(1);
+      text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 1), 0 0 70px rgba(255, 255, 255, 1);
+    }
+  }
+  
+  /* Agregar un pequeño movimiento a los elementos del Hero */
+  .hero-image-left, .hero-image-right {
+    animation: float 2s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import "./styles/Reportes.css"; 
 import CategoriaABM from './CategoriaABM';
 import ProveedorABM from './ProveedorABM';
+import ProductoABM from './ProductoABM';
 
 const Reportes = () => {
   const [activeTab, setActiveTab] = useState('categorias');
@@ -23,10 +24,17 @@ const Reportes = () => {
         >
           Proveedores
         </button>
+        <button
+          className={`tab-button ${activeTab === 'productos' ? 'active' : ''}`}
+          onClick={() => setActiveTab('productos')}
+        >
+          Productos
+        </button>
       </div>
       <div className="tab-content">
         {activeTab === 'categorias' && <CategoriaABM />}
         {activeTab === 'proveedores' && <ProveedorABM />}
+        {activeTab === 'productos' && <ProductoABM />}
       </div>
     </div>
   );
